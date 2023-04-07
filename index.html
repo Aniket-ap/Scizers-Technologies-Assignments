@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Address Book Manager</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css">
+</head>
+
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold mb-6">Address Book Manager</h1>
+        <form class="mb-6">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="name">
+                    Name:
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="text" id="name" name="name" required />
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="phone">
+                    Phone:
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="tel" id="phone" name="phone" required />
+            </div>
+
+            <button
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button" onclick="addContact()">
+                Add Contact
+            </button>
+        </form>
+        <hr class="mb-6" />
+
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="filter">
+                Filter:
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                type="text" id="filter" name="filter" placeholder="Search by name or phone"
+                oninput="filterContacts()" />
+        </div>
+
+        <ul id="contacts" class="divide-y divide-gray-200">
+        </ul>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
